@@ -1,0 +1,6 @@
+{
+  "name": "GuitarWorld — Энциклопедия и портал о гитарах",
+  "description": "Полноценная современная интерактивная энциклопедия о гитарах: устройство, бренды, модели, электроника, звук, педали, усилители, сравнение и подбор инструментов.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

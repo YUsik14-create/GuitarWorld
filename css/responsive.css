@@ -1,0 +1,107 @@
+/**
+ * Адаптивная вёрстка и мобильные элементы (GuitarWorld Responsive CSS)
+ */
+
+/* Мобильная нижняя панель быстрых действий */
+.bottom-nav-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--bottom-bar-height);
+  background: var(--bg-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 900;
+  padding: 0 var(--space-2);
+}
+@media (min-width: 1024px) {
+  .bottom-nav-bar {
+    display: none;
+  }
+}
+
+.bottom-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  color: var(--text-muted);
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  transition: color var(--transition-fast);
+  position: relative;
+}
+.bottom-nav-item:hover, .bottom-nav-item.active {
+  color: var(--accent-primary);
+}
+.bottom-nav-item svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Мобильное выпадающее Hamburger Drawer */
+.mobile-drawer {
+  position: fixed;
+  top: var(--header-height);
+  inset-inline: 0;
+  bottom: 0;
+  background: var(--bg-app);
+  z-index: 950;
+  padding: var(--space-6) var(--space-4) calc(var(--bottom-bar-height) + 24px);
+  overflow-y: auto;
+  display: none;
+  flex-direction: column;
+  gap: var(--space-4);
+  border-top: 1px solid var(--border-subtle);
+}
+.mobile-drawer.open {
+  display: flex;
+}
+@media (min-width: 1024px) {
+  .mobile-drawer {
+    display: none !important;
+  }
+}
+
+.drawer-section-title {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-primary);
+  margin-top: var(--space-3);
+  margin-bottom: var(--space-1);
+}
+
+.drawer-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 12px 14px;
+  background: var(--bg-surface-1);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.drawer-link:hover, .drawer-link.active {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+  background: var(--bg-surface-2);
+}
+
+/* Адаптивные отступы под нижний бар на мобильных */
+@media (max-width: 1023px) {
+  body {
+    padding-bottom: var(--bottom-bar-height);
+  }
+}
